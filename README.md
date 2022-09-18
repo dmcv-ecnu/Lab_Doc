@@ -28,7 +28,7 @@ Windows系统推荐使用MobaXterm登录服务器
 
 1）创建用户：`useradd -m -s /bin/bash <创建的用户名>`
 
-2）`vim /home/<创建的用户名>/.ssh/known_hosts`复制公钥字符串(id_rsa.pub)内容
+2）`vim /home/<创建的用户名>/.ssh/authorized_keys`复制公钥字符串(id_rsa.pub)内容，这个命令需要sudo，所以需要再运行`sudo chown -R <创建用户名> /home/<创建用户名>/.ssh`，将权限还给创建的用户
 
 3）当自己可以登录目前账户时，可以使用`ssh-import-id-gh <github用户名>`来直接更新登录服务器的公钥与登录github的一致
 
